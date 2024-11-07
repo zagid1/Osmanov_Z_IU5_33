@@ -15,7 +15,6 @@ def get_coeff_sys(arg_index, prompt):
         return get_coeff(prompt)
     
 
-
 def solve_quad(a, b, c):
     dis = b**2 - 4 * a * c
     if dis > 0:

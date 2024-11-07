@@ -21,13 +21,14 @@ def field(items, *args):
     if len(args) == 1:
         return [ str(element.get(args[0])) for element in items if (element.get(args[0]) != None) ] 
     else:
+        #all_keys = ["title", "price", "color"]
+        args = [key for key in ["title", "price", "color"] if key in args]
         res = []
         for element in items:
             arr = {}
             for key in args:
-                if element.get(key) != None:
-                    arr[key] = element[key]
+                if element.get(key) != None: arr[key] = element[key]
+            res.append(arr)
+        return res
             
-            print(arr)
-            
-print(field(goods, "color"))
+print(field(goods, "color", "title"))

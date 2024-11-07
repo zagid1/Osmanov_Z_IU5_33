@@ -6,11 +6,12 @@ goods = [
     {'title': 'Телевизор', 'price': 34000}
 ]
 
-args = ['color']
+args = ['color',"title"]
 
 def field(items, *args):
     assert len(args) > 0
     if len(args) == 1: print(', '.join( [ str(element.get(args[0])) for element in items if (element.get(args[0]) != None) ] ) )
-    else: print(*[ {key: element.get(key) for key in args if element.get(key) != None} for element in items  ], sep = ', \n', )
+    else: print(*[ {key: element.get(key) for key in [key for key in ["title", "price", "color"] if key in args] 
+                    if element.get(key) != None} for element in items  ], sep = ', \n', )
     
 field(goods, *args)

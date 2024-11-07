@@ -44,14 +44,14 @@ class Biquadratic:
             print("корней нет.")
 
 class Input:
-    @staticmethod 
+
     def get_coeff(prompt):
         while True:
             try:
                 return float(input(prompt))
             except ValueError:
                 print("Некорректный ввод.")
-    @staticmethod 
+
     def get_coeff_sys(arg_index, prompt):
         try:
             return float(sys.argv[arg_index])
