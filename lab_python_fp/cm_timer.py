@@ -11,7 +11,7 @@ def cm_timer_2():
         print(f"time: {(end_time - start_time)//0.001/1000}")
 
 class cm_timer_1:
-    def __enter__(self):
+    def __enter__(self): 
         self.start_time = time.time()
         return self
 
@@ -26,4 +26,3 @@ if __name__ == "__main__":
 
     with cm_timer_2():
         time.sleep(5.5)
-        
