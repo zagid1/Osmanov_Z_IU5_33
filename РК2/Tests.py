@@ -1,5 +1,5 @@
 import unittest
-import RK2 
+import main as RK2
 from operator import itemgetter
 
 
