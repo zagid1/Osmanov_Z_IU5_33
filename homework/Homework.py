@@ -95,7 +95,7 @@ def print_path(stations, dist, intermediate_stations, finish):
 # for i in STATIONS:
 #     print(i.number, i.name, i.line)
 
-STATIONS = create_stations_db("C:\\Users\\osman\\Desktop\\лабораторные\\3 сем\\text.json")
+STATIONS = create_stations_db("C:\\Users\\osman\\Desktop\\лабораторные\\3 сем\\homework\\text.json")
 
 
 LINES = {}
