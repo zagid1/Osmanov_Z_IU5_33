@@ -15,7 +15,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-TOKEN = '****************************************************************'
+TOKEN = '7806930090:AAFezcP47TlVkTd86P280KyGRIYcE08ZXmY'
 
 async def translate_text(text: str, target_lang: str) -> str:
     url = "https://translate.googleapis.com/translate_a/single"

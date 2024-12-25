@@ -10,9 +10,8 @@ class Unique:
                 elif (type(item) != str and item not in self.items):
                     self.items.append(item)
         else:
-            for item in items:
-                if (item not in self.items):
-                    self.items.append(item)
+            for item in items: 
+                if (item not in self.items): self.items.append(item)
     
     def __iter__(self):
         return self
