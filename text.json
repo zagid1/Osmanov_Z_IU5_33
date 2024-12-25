@@ -147,7 +147,7 @@
             "name": "Проспект Ветеранов",
             "line": "Кировско Выборгская",
             "neighbor_num": 17,
-            "distance": 2.34
+            "distance": 3.78
         },
         {
             "num": 19,
@@ -216,8 +216,8 @@
             "num": 27,
             "name": "Невский Проспект",
             "line": "Москвоско Петроградская",
-            "neighbor_num": 0,
-            "distance": 3.23
+            "neighbor_num": 41,
+            "distance": 0
         },
         {
             "num": 28,
