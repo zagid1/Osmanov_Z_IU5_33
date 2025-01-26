@@ -19,8 +19,6 @@ def create_stations_db(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
         data = json.load(file)
         stations = [Station(-1, "Unknown", "Unknown") for _ in range(data['total_stations'])]
-        for i in stations:
-            print(i.number, i.name, i.line, i.nearstations)
         
         for station in data['stations']:
             station_num = station['num']
@@ -30,11 +28,9 @@ def create_stations_db(file_path):
             stations[station_num].line = station['line']
             stations[station_num].nearstations.append((nearstations_num, station['distance']))
             stations[nearstations_num].nearstations.append((station_num, station['distance']))
-            print(station_num, nearstations_num)
-            print(stations[station_num].nearstations, stations[nearstations_num].nearstations)
-        
-        for i in stations:
-            print(i.number, i.name, i.line, i.nearstations)
+            
+        # for i in stations:
+        #     print(i.number, i.name, i.line, i.nearstations)
     return stations
 
 
@@ -48,17 +44,20 @@ def dijkstra_algorithm(stations, start):
     for _ in range(size):
         nearest = -1
         for v in range(size):
-            if ((not visited[v]) and (nearest == -1 or dist[nearest] > dist[v])): 
+            if ((not visited[v]) and (nearest == -1 or dist[v] < dist[nearest])): 
                 nearest = v 
                 # print(nearest)
                 #break
 
         visited[nearest] = True
+        print(nearest) 
         for (to, distance) in stations[nearest].nearstations:
             if dist[to] > dist[nearest] + distance:
                 dist[to] = dist[nearest] + distance
                 intermediate_stations[to] = nearest
-    #print(intermediate_stations)
+                print('---', to , end='\n')
+    print(intermediate_stations)
+    print(dist)
     return dist, intermediate_stations
 
 def print_path(stations, dist, intermediate_stations, finish):
